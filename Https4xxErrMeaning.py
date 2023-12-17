@@ -63,6 +63,5 @@ def error(x):
 
 while r == 0:
     r = 1
-    uip = int(input("What is the 4xx error code? "))
-    error(uip)
+    print(error(int(input("What is the 4xx error code? "))))
     r = 0
