@@ -1,10 +1,5 @@
 r = 0
 def error(x):
-    if x == "quit":
-        quit()
-    else:
-        x = int(x)
-    
     match x:
         case 400:
             return "Bad Request"
@@ -64,10 +59,10 @@ def error(x):
             return "Request Header Fields Too Large"
         case 451:
             return "Unavailable For Legal Reasons"
-    return "Not a 4xx error code or does not exist"
+    raise ValueError("Not a 4xx Value")
 
-print("Type the 4xx error or type quit to quit")
 while r == 0:
     r = 1
-    print(error(input("What is the 4xx error code? ")))
+    input = int(input("What is the 4xx error code? "))
+    error(input)
     r = 0
